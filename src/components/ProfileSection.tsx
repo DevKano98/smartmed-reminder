@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,12 +36,15 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
     
     if (name.includes('.')) {
       const [parent, child] = name.split('.');
+      
+      const parentObj = formData[parent as keyof UserProfile];
+      const updatedParentObj = typeof parentObj === 'object' && parentObj !== null
+        ? { ...parentObj, [child]: value }
+        : { [child]: value };
+        
       setFormData({
         ...formData,
-        [parent]: {
-          ...formData[parent as keyof UserProfile],
-          [child]: value,
-        },
+        [parent]: updatedParentObj,
       });
     } else {
       setFormData({
@@ -285,7 +287,6 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
 
 export default ProfileSection;
 
-// Helper animation
 const pageTransition = {
   hidden: { opacity: 0, scale: 0.98 },
   show: { 
