@@ -10,7 +10,7 @@ import AccountSection from "@/components/profile/AccountSection";
 import { UserProfile } from "@/types/profile";
 
 // Demo profile data
-const demoProfile = {
+const demoProfile: UserProfile = {
   name: "Alex Johnson",
   age: "42",
   phone: "555-123-4567",
@@ -22,7 +22,7 @@ const demoProfile = {
 };
 
 const Profile = () => {
-  const [profile, setProfile] = useState(demoProfile);
+  const [profile, setProfile] = useState<UserProfile>(demoProfile);
   const [activeTab, setActiveTab] = useState("personal");
 
   useEffect(() => {
