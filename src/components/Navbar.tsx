@@ -1,5 +1,5 @@
 
-import { Bell, Menu, X } from "lucide-react";
+import { Bell, Menu, MessageSquare, Video, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { path: "/", label: "Dashboard" },
   { path: "/medications", label: "Medications" },
+  { path: "/video-call", label: "Video Call" },
+  { path: "/ai-chat", label: "AI Chat" },
   { path: "/profile", label: "Profile" },
 ];
 

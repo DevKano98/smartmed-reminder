@@ -9,6 +9,8 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import Medications from "./pages/Medications";
 import Profile from "./pages/Profile";
+import VideoCall from "./pages/VideoCall";
+import AIChat from "./pages/AIChat";
 import NotFound from "./pages/NotFound";
 
 // Framer Motion for animations
@@ -39,6 +41,8 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/medications" element={<Medications />} />
+                <Route path="/video-call" element={<VideoCall />} />
+                <Route path="/ai-chat" element={<AIChat />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
